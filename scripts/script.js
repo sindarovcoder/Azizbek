@@ -68,3 +68,14 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleButton.addEventListener("click", toggleAudio);
   }
 });
+
+window.addEventListener("scroll", () => {
+  const crollHeight = document.body.offsetHeight - window.innerHeight;
+  console.log((window.scrollY * 100) / crollHeight);
+  // setCount((window.scrollY * 100) / crollHeight);
+  if ((window.scrollY * 100) / crollHeight > 0.2) {
+    document.getElementById("play").classList.add("play_anim");
+  } else {
+    document.getElementById("play").classList.remove("play_anim");
+  }
+});
